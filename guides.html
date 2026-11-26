@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wealthness personal finance and financial literacy dashboard">
+    <title>Financial Guides | Wealthness</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body data-page="guides">
+    <div class="app-shell">
+
+        <!-- This sidebar lets users move between the Wealthness pages. -->
+<aside class="sidebar" id="sidebar">
+            <a class="brand" href="index.html">
+                <div class="brand-mark">W</div>
+                <div>
+                    <div class="brand-name">Wealthness</div>
+                    <div class="brand-tag">Your Money, in Focus.</div>
+                </div>
+            </a>
+
+            <div class="nav-label">Main</div>
+            <!-- These links open the different pages of the website. -->
+<nav class="nav-list">
+                <a class="nav-link" href="index.html"><span class="nav-icon">▦</span>Overview</a>
+                <a class="nav-link" href="budget.html"><span class="nav-icon">↗</span>Budget &amp; Expenses</a>
+                <a class="nav-link" href="savings.html"><span class="nav-icon">◎</span>Savings Goals</a>
+                <a class="nav-link" href="debt.html"><span class="nav-icon">▤</span>Debt Management</a>
+                <a class="nav-link" href="calendar.html"><span class="nav-icon">▦</span>Financial Calendar</a>
+            </nav>
+            <div class="nav-label nav-label-spaced">Resources</div>
+            <nav class="nav-list">
+                <a class="nav-link active" href="guides.html"><span class="nav-icon">▧</span>Financial Guides</a>
+                <a class="nav-link" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-tip">
+                    <strong>Small steps add up.</strong>
+                    <p>Build healthy money habits one decision at a time.</p>
+                </div>
+                <div class="sidebar-footer">
+                    © 2026 Wealthness · Student project
+                </div>
+            </div>
+        </aside>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <div class="main">
+            <!-- This top bar shows the page title, date, and quick controls. -->
+<header class="topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">☰</button>
+                    <div class="breadcrumb">
+                        Workspace <strong>Financial Guides</strong>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <span class="today" id="current-date"></span>
+                    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">☾ <span>Dark mode</span></button><div class="avatar">W</div>
+                </div>
+            </header>
+
+            <!-- This area contains the main information and tools for this page. -->
+<main class="content">
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">WEALTHNESS WORKSPACE</div>
+                        <h1>Financial Guides</h1>
+                        <p class="page-subtitle">Simple lessons to help you make informed financial decisions.</p>
+                    </div>
+                </div>
+
+                <!-- This section groups related guides information and controls. -->
+                <section class="grid guide-grid">
+
+                    <article class="panel guide-card">
+                        <div class="guide-icon">🧾</div>
+                        <h3>Budgeting basics</h3>
+                        <p>Learn how to plan your income and expenses.</p>
+                        <details>
+                            <summary>Read guide</summary>
+                            <p>Start by listing all your income sources. Write down fixed expenses such as rent and bills, then estimate flexible expenses such as food and transport. Compare your total expenses with your income and set realistic limits. Review your budget regularly.</p>
+                        </details>
+                    </article>
+
+                    <article class="panel guide-card">
+                        <div class="guide-icon">🐷</div>
+                        <h3>Saving as a student</h3>
+                        <p>Build a savings habit even with a limited allowance.</p>
+                        <details>
+                            <summary>Read guide</summary>
+                            <p>Choose a small amount you can save consistently. Separate savings from everyday spending, set a clear goal, and track your progress. Increase your contribution when you have extra money, but avoid setting a target that prevents you from covering essentials.</p>
+                        </details>
+                    </article>
+
+                    <article class="panel guide-card">
+                        <div class="guide-icon">🛒</div>
+                        <h3>Needs vs. wants</h3>
+                        <p>Recognize the difference before making a purchase.</p>
+                        <details>
+                            <summary>Read guide</summary>
+                            <p>Needs are expenses required for daily living, such as food, housing, and transportation. Wants are optional purchases that make life enjoyable. Before buying, pause and ask whether the purchase fits your budget and priorities.</p>
+                        </details>
+                    </article>
+
+                    <article class="panel guide-card">
+                        <div class="guide-icon">🛟</div>
+                        <h3>Emergency funds</h3>
+                        <p>Prepare for unexpected expenses.</p>
+                        <details>
+                            <summary>Read guide</summary>
+                            <p>An emergency fund is money reserved for unexpected needs. A common long-term target is three to six months of essential expenses, but it is fine to begin with a smaller starter goal. Keep it accessible and use it for genuine emergencies.</p>
+                        </details>
+                    </article>
+
+                    <article class="panel guide-card">
+                        <div class="guide-icon">💳</div>
+                        <h3>Responsible borrowing</h3>
+                        <p>Understand the cost and responsibility of debt.</p>
+                        <details>
+                            <summary>Read guide</summary>
+                            <p>Before borrowing, understand the interest rate, fees, payment schedule, and total repayment amount. Borrow only what you can reasonably repay. Avoid taking new debt to cover existing debt without understanding the consequences.</p>
+                        </details>
+                    </article>
+
+                    <article class="panel guide-card">
+                        <div class="guide-icon">📅</div>
+                        <h3>Debt repayment strategies</h3>
+                        <p>Make a clear plan for paying down balances.</p>
+                        <details>
+                            <summary>Read guide</summary>
+                            <p>Always plan for required payments first. Some people focus extra payments on the highest-interest debt to reduce total interest, while others start with the smallest balance for motivation. Choose a realistic approach and keep track of due dates.</p>
+                        </details>
+                    </article>
+
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div id="toast" class="success-message hidden" role="status" aria-live="polite" style="position:fixed;right:20px;bottom:20px;z-index:50;box-shadow:var(--shadow)"></div>
+</body>
+</html>

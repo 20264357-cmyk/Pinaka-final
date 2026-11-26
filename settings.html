@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wealthness personal finance and financial literacy dashboard">
+    <title>Settings | Wealthness</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="settings">
+    <div class="app-shell">
+        <!-- This sidebar lets users move between the Wealthness pages. -->
+<aside class="sidebar" id="sidebar">
+            <a class="brand" href="index.html">
+                <div class="brand-mark">W</div>
+                <div>
+                    <div class="brand-name">Wealthness</div>
+                    <div class="brand-tag">Your Money, in Focus.</div>
+                </div>
+            </a>
+
+            <div class="nav-label">Main</div>
+            <!-- These links open the different pages of the website. -->
+<nav class="nav-list">
+                <a class="nav-link" href="index.html"><span class="nav-icon">▦</span>Overview</a>
+                <a class="nav-link" href="budget.html"><span class="nav-icon">↗</span>Budget &amp; Expenses</a>
+                <a class="nav-link" href="savings.html"><span class="nav-icon">◎</span>Savings Goals</a>
+                <a class="nav-link" href="debt.html"><span class="nav-icon">▤</span>Debt Management</a>
+                <a class="nav-link" href="calendar.html"><span class="nav-icon">▦</span>Financial Calendar</a>
+            </nav>
+            <div class="nav-label nav-label-spaced">Resources</div>
+            <nav class="nav-list">
+                <a class="nav-link" href="guides.html"><span class="nav-icon">▧</span>Financial Guides</a>
+                <a class="nav-link active" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-tip">
+                    <strong>Small steps add up.</strong>
+                    <p>Build healthy money habits one decision at a time.</p>
+                </div>
+                <div class="sidebar-footer">© 2026 Wealthness · Student project</div>
+            </div>
+        </aside>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <div class="main">
+            <!-- This top bar shows the page title, date, and quick controls. -->
+<header class="topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">☰</button>
+                    <div class="breadcrumb">Workspace <strong>Settings</strong></div>
+                </div>
+                <div class="topbar-right">
+                    <span class="today" id="current-date"></span>
+                    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">☾ <span>Dark mode</span></button><div class="avatar">W</div>
+                </div>
+            </header>
+
+            <!-- This area contains the main information and tools for this page. -->
+<main class="content">
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">WEALTHNESS WORKSPACE</div>
+                        <h1>Settings</h1>
+                        <p class="page-subtitle">Manage your preferences and local data.</p>
+                    </div>
+                </div>
+
+                <!-- This section groups related settings information and controls. -->
+                <section class="panel" style="margin-bottom:18px">
+                    <div class="panel-heading"><div><h2>Appearance</h2><p class="panel-subtitle">Choose a comfortable display theme for Wealthness.</p></div></div>
+                    <div class="settings-row"><div><strong>Dark mode</strong><p>Switch between the original light theme and a darker theme.</p></div><button class="btn btn-secondary" id="settings-theme-toggle" type="button">Toggle dark mode</button></div>
+                </section>
+                <!-- This section groups related settings information and controls. -->
+                <section class="grid two-col">
+                    <article class="panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Profile preferences</h2>
+                                <p class="panel-subtitle">Customize the name shown in your local Wealthness experience.</p>
+                            </div>
+                        </div>
+
+                        <!-- This form collects information that JavaScript uses when the user submits it. -->
+                        <form id="profile-form">
+                            <div class="form-field">
+                                <label for="profile-name">Display name</label>
+                                <input id="profile-name" placeholder="Your name">
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Save settings</button>
+                            </div>
+                        </form>
+                    </article>
+
+                    <article class="panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Data backup</h2>
+                                <p class="panel-subtitle">Keep a copy of your Wealthness records.</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-row">
+                            <div>
+                                <strong>Export backup</strong>
+                                <p>Download your financial records as a JSON file.</p>
+                            </div>
+                            <button class="btn btn-secondary btn-small" id="export-data">Export</button>
+                        </div>
+
+                        <div class="settings-row">
+                            <div>
+                                <strong>Restore backup</strong>
+                                <p>Restore local records from a previous backup. This replaces current data.</p>
+                            </div>
+                            <label class="btn btn-secondary btn-small" for="import-json">Choose file</label>
+                            <input class="hidden" id="import-json" type="file" accept=".json">
+                        </div>
+                        <p class="panel-subtitle">Security note: Wealthness stores data in this browser and does not have a login or server-side account. Avoid entering sensitive financial details and use it only on a device you trust.</p>
+                    </article>
+                </section>
+
+                <!-- This section groups related settings information and controls. -->
+                <section class="panel" style="margin-bottom:18px">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Custom categories</h2>
+                            <p class="panel-subtitle">Create categories that match how you organize your money.</p>
+                        </div>
+                    </div>
+                    <!-- This form collects information that JavaScript uses when the user submits it. -->
+                    <form id="custom-category-form" class="toolbar">
+                        <input id="custom-category-input" placeholder="e.g. School supplies" required aria-label="New category name">
+                        <button class="btn btn-primary" type="submit">Add category</button>
+                    </form>
+                    <p class="panel-subtitle">Custom categories are available when recording transactions and setting budget limits.</p>
+                </section>
+
+                <!-- This section groups related settings information and controls. -->
+                <section class="panel" style="margin-bottom:18px">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Connected Accounts</h2>
+                            <p class="panel-subtitle">Manage demo account labels only.</p>
+                        </div>
+                        <span class="pill warning">Demo mode</span>
+                    </div>
+
+                    <div class="notice">This student-project version does not connect to real bank or GCash systems. Never enter your password, MPIN, card number, or OTP here. Live synchronization requires authorized financial APIs and secure backend services.</div>
+
+                    <div id="accounts-list"></div>
+
+                    <!-- This form collects information that JavaScript uses when the user submits it. -->
+                    <form id="account-form" style="margin-top:18px">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="account-provider">Provider</label>
+                                <select id="account-provider">
+                                    <option value="GCash">GCash</option>
+                                    <option value="Maya">Maya</option>
+                                    <option value="BDO">BDO</option>
+                                    <option value="BPI">BPI</option>
+                                    <option value="Metrobank">Metrobank</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="account-label">Account label</label>
+                                <input id="account-label" placeholder="e.g. My daily wallet" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-primary">Add demo account</button>
+                        </div>
+                    </form>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <div id="toast" class="success-message hidden" role="status" aria-live="polite" style="position:fixed;right:20px;bottom:20px;z-index:50;box-shadow:var(--shadow)"></div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wealthness personal finance and financial literacy dashboard">
+    <title>Financial Calendar | Wealthness</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="calendar">
+    <div class="app-shell">
+        <!-- This sidebar lets users move between the Wealthness pages. -->
+<aside class="sidebar" id="sidebar">
+            <a class="brand" href="index.html">
+                <div class="brand-mark">W</div>
+                <div>
+                    <div class="brand-name">Wealthness</div>
+                    <div class="brand-tag">Your Money, in Focus.</div>
+                </div>
+            </a>
+
+            <div class="nav-label">Main</div>
+            <!-- These links open the different pages of the website. -->
+<nav class="nav-list">
+                <a class="nav-link" href="index.html"><span class="nav-icon">▦</span>Overview</a>
+                <a class="nav-link" href="budget.html"><span class="nav-icon">↗</span>Budget &amp; Expenses</a>
+                <a class="nav-link" href="savings.html"><span class="nav-icon">◎</span>Savings Goals</a>
+                <a class="nav-link" href="debt.html"><span class="nav-icon">▤</span>Debt Management</a>
+                <a class="nav-link active" href="calendar.html"><span class="nav-icon">▦</span>Financial Calendar</a>
+            </nav>
+            <div class="nav-label nav-label-spaced">Resources</div>
+            <nav class="nav-list">
+                <a class="nav-link" href="guides.html"><span class="nav-icon">▧</span>Financial Guides</a>
+                <a class="nav-link" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-tip">
+                    <strong>Small steps add up.</strong>
+                    <p>Build healthy money habits one decision at a time.</p>
+                </div>
+                <div class="sidebar-footer">© 2026 Wealthness · Student project</div>
+            </div>
+        </aside>
+
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <div class="main">
+            <!-- This top bar shows the page title, date, and quick controls. -->
+<header class="topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">☰</button>
+                    <div class="breadcrumb">Workspace <strong>Financial Calendar</strong></div>
+                </div>
+                <div class="topbar-right">
+                    <span class="today" id="current-date"></span>
+                    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">☾ <span>Dark mode</span></button><div class="avatar">W</div>
+                </div>
+            </header>
+
+            <!-- This area contains the main information and tools for this page. -->
+<main class="content">
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">WEALTHNESS WORKSPACE</div>
+                        <h1>Financial Calendar</h1>
+                        <p class="page-subtitle">Keep track of upcoming payments, recurring entries, and debt due dates.</p>
+                    </div>
+                </div>
+
+                <!-- This section groups related calendar information and controls. -->
+                <section class="grid stats-grid">
+                    <article class="stat-card"><div class="stat-label">Upcoming events</div><div class="stat-value" id="upcoming-count">0</div><div class="stat-note">Scheduled from today onward</div></article>
+                    <article class="stat-card"><div class="stat-label">Upcoming expenses</div><div class="stat-value" id="upcoming-total">₱0.00</div><div class="stat-note">Upcoming scheduled expense amounts</div></article>
+                    <article class="stat-card"><div class="stat-label">Past due dates</div><div class="stat-value" id="overdue-count">0</div><div class="stat-note">Review these recorded dates</div></article>
+                </section>
+
+                <!-- This section groups related calendar information and controls. -->
+                <section class="grid two-col">
+                    <article class="panel">
+                        <div class="panel-heading"><div><h2>Add a planned payment</h2><p class="panel-subtitle">Schedule a bill or an expected income date.</p></div></div>
+                        <!-- This form collects information that JavaScript uses when the user submits it. -->
+                        <form id="planned-form">
+                            <div class="form-grid">
+                                <div class="form-field full"><label for="planned-name">Description</label><input id="planned-name" placeholder="e.g. Electricity bill" required></div>
+                                <div class="form-field"><label for="planned-amount">Amount (₱)</label><input id="planned-amount" type="number" min="0.01" step=".01" required></div>
+                                <div class="form-field"><label for="planned-date">Due date</label><input id="planned-date" type="date" required></div>
+                                <div class="form-field"><label for="planned-type">Type</label><select id="planned-type"><option value="expense">Expense</option><option value="income">Income</option></select></div>
+                                <div class="form-field"><label for="planned-category">Category</label><select id="planned-category"></select></div>
+                            </div>
+                            <div class="form-actions"><button class="btn btn-primary" type="submit">Add to calendar</button></div>
+                        </form>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-heading"><div><h2>How reminders work</h2><p class="panel-subtitle">A simple overview of your schedule.</p></div></div>
+                        <p class="panel-subtitle" style="line-height:1.9">Planned payments appear here on the date you choose. Debt due dates are taken from Debt Management, and recurring transactions show their next scheduled date. Past dates are marked for review. Wealthness does not send push notifications or email alerts.</p>
+                        <a class="text-link" href="debt.html">Manage debt due dates →</a>
+                    </article>
+                </section>
+
+                <!-- This section groups related calendar information and controls. -->
+                <section class="panel">
+                    <div class="panel-heading"><div><h2>Upcoming schedule</h2><p class="panel-subtitle">Planned payments, recurring entries, and recorded debt due dates.</p></div></div>
+                    <div class="calendar-events" id="calendar-events"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div id="toast" class="success-message hidden" role="status" aria-live="polite" style="position:fixed;right:20px;bottom:20px;z-index:50;box-shadow:var(--shadow)"></div>
+</body>
+</html>
